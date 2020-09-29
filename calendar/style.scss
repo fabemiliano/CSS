@@ -1,0 +1,58 @@
+
+@mixin parts($a, $b, $c, $d, $e) {
+  margin-top: $a;
+  font-size: $b;
+  font-weight: $c;
+  color: $d;
+  margin-bottom: $e;
+}
+
+body {
+  margin: 0;
+  padding: 0;
+  display: flex;
+  justify-content:center;
+  align-items:center;
+  min-height: 100vh; 
+  background: url(./photo.jpg);
+  background-size: cover;
+  mix-blend-mode: diff;
+}
+
+p {
+  margin: 0;
+}
+
+.calendar {
+  position: relative;
+  width: 200px;
+  background: #fff;
+  text-align: center;
+  border-radius: 8px;
+  overflow: hidden;
+  -webkit-box-reflect: below 1px linear-gradient(transparent, transparent, #0004);
+  transition: 1s;
+
+  &:hover{
+    transform: scale(1.1);
+    box-shadow: 0 25px 60px rgba(0,0,0,.8)
+  }
+  #monthName {
+    position: relative;
+    padding: 5px 10px;
+    background: #ff6631;
+    color: white;
+    font-size: 30px;
+    font-weight: 700;
+  }
+
+  #dayName {
+    @include parts(20px, 20px, 300, #999, 0)
+  }
+  #dayNumber {
+    @include parts(0px, 80px, 900, #333, 0)
+  }
+  #year {
+    @include parts(0px, 20px, 500, #333, 20px)
+  }
+}

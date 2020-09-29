@@ -1,0 +1,85 @@
+body {
+  margin: 0;
+  padding: 0;
+  background: #000;
+}
+
+section {
+  padding: 100px;
+}
+
+section h2 {
+  font-size: 3.5rem;
+  color: #555;
+}
+
+section p {
+  font-size: 1rem;
+  color: #555;
+}
+
+#progressbar {
+  position: fixed;
+  top: -1px;
+  right: 0;
+  width: 10px;
+  border-radius: 50px;
+  background: -webkit-gradient(linear, left bottom, left top, from(#008aff), to(#00ffe7));
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  -webkit-animation: animate 5s linear infinite;
+          animation: animate 5s linear infinite;
+}
+
+#progressbar:before, #progressbar:after {
+  content: '';
+  position: absolute;
+  top: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+  background: -webkit-gradient(linear, left bottom, left top, from(#008aff), to(#00ffe7));
+  background: linear-gradient(to top, #008aff, #00ffe7);
+  -webkit-filter: blur(10px);
+          filter: blur(10px);
+}
+
+@-webkit-keyframes animate {
+  0%, 100% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(180deg);
+            filter: hue-rotate(180deg);
+  }
+}
+
+@keyframes animate {
+  0%, 100% {
+    -webkit-filter: hue-rotate(0deg);
+            filter: hue-rotate(0deg);
+  }
+  50% {
+    -webkit-filter: hue-rotate(180deg);
+            filter: hue-rotate(180deg);
+  }
+}
+
+::-webkit-scrollbar {
+  width: 0;
+}
+
+#percent {
+  position: fixed;
+  top: 50%;
+  right: 15px;
+  -webkit-transform: translateY(-50%) rotateX(180deg) rotateY(180deg);
+          transform: translateY(-50%) rotateX(180deg) rotateY(180deg);
+  color: #fff;
+  font-size: 2em;
+  -webkit-writing-mode: vertical-rl;
+      -ms-writing-mode: tb-rl;
+          writing-mode: vertical-rl;
+  text-orientation: sideways;
+}
+/*# sourceMappingURL=style.css.map */

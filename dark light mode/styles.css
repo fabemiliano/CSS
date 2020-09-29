@@ -1,0 +1,91 @@
+body {
+  --accent-color: orangered;
+  --background-color: white;
+  --text-color: black;
+  --button-text-color: white;
+  --transition-delay: 1s;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  height: 100vh;
+  margin: 0;
+  background-color: var(--background-color);
+  color: var(--text-color);
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  overflow: hidden;
+}
+
+body.dark {
+  --accent-color: #d0d066;
+  --background-color: black;
+  --text-color: white;
+  --button-text-color: black;
+  --transition-delay: 1s;
+}
+
+.theme-toggle-button {
+  background-color: var(--accent-color);
+}
+
+.sun-moon-container {
+  --rotation: 0;
+  position: absolute;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  top: 0;
+  height: 200vmin;
+  pointer-events: none;
+  -webkit-transform: rotate(var(--rotation));
+          transform: rotate(var(--rotation));
+  -webkit-transition: -webkit-transform 1s;
+  transition: -webkit-transform 1s;
+  transition: transform 1s;
+  transition: transform 1s, -webkit-transform 1s;
+}
+
+.dark .sun-moon-container {
+  --rotation: 180deg;
+}
+
+.sun, .moon {
+  position: absolute;
+  -webkit-transition: all 1s;
+  transition: all 1s;
+  fill: var(--accent-color);
+}
+
+.sun {
+  top: 5%;
+}
+
+.dark .sun {
+  opacity: 0;
+}
+
+.moon {
+  bottom: 5%;
+  opacity: 0;
+}
+
+.dark .moon {
+  opacity: 1;
+}
+/*# sourceMappingURL=styles.css.map */

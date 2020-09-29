@@ -1,0 +1,60 @@
+@mixin marginAndPadding($margin, $padding){
+  margin: $margin;
+  @if ($padding > 10px) {
+  padding: $padding;
+  } @else {
+    padding: 0;
+  }
+}
+
+body {
+  @include marginAndPadding(0, 0);
+  
+  section {
+    height: 100vh;
+    background: #000;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    h1 {
+      margin:0;
+      padding: 0;
+      position: absolute;
+      top: 50%;
+      transform: translateY(-50%);
+      width: 100%;
+      text-align: center;
+      color: #ddd;
+      font-size: 5em;
+      font-family: sans-serif;
+      letter-spacing: 0.2em;
+
+      span {
+        display: inline-block;
+        animation: animate 1s linear forwards;
+        opacity: 0;
+        @for $child from 1 through 7 {
+          &:nth-child(#{$child}) {
+            animation-delay: calc(#{$child}s / 2);
+          }
+        }
+      }
+    }
+  }
+}
+
+@keyframes animate {
+  0% {
+    opacity: 0;
+    transform: rotateY(90deg);
+    filter: blur(10px) 
+  }
+
+  100% {
+    opacity: 1;
+    transform: rotateY(0deg);
+    filter: blur(0px)
+  }
+}
+

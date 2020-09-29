@@ -1,0 +1,86 @@
+body{
+  margin: 0;
+  padding: 0;
+}
+
+.behind {
+  height: 100vh;
+  width: 100%;
+}
+
+.overlay {
+  position: absolute;
+  margin: auto;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  background: white;
+  padding: 10px;
+  overflow: hidden;
+}
+
+ i {
+  font-size: 30px;
+  opacity: 0.6;
+  cursor: pointer;
+  transition: all 150ms ease-in-out;
+  &:hover {
+      opacity: 1;
+  }
+}
+
+
+.content {
+  width: 65%;
+  margin: 0 auto;
+  padding: 2em;
+}
+
+h2 {
+  text-align: center;
+  font-weight: 300;
+
+}
+
+.p {
+ height: 80%;
+ padding: 1em;
+ letter-spacing: 1;
+
+}
+
+.menucontain {
+  height: 100%;
+  width: 45%;
+  float: left;
+  background-image: url(./photo.jpg);
+  background-size: cover;
+
+}
+
+.newWrap {
+  height: auto;
+  width: 18%;
+  position: relative;
+  margin: 0 auto;
+  top: 50%;
+  transform: translateY(-50%);
+  list-style: none;
+  color: white;
+}
+
+.newWrap li {
+  margin: 0.6em;
+  opacity: 0;
+  color: white;
+}
+
+.newWrap li:hover {
+  cursor: pointer;
+}
+
+.slide {
+  margin-left: 45%;
+  height: 90%;
+}
